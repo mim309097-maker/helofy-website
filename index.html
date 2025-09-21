@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helofy Software Ltd - Production</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+html { scroll-behavior: smooth; }
+.hidden-section { display: none; }
+.app-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.app-card:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+.tab-active { background-color: #6366F1; color: white; }
+nav a { display: inline-block; flex: 1; text-align: center; }
+section { padding-top: 2rem; padding-bottom: 2rem; }
+.card { background-color: white; padding: 1.5rem; border-radius: 0.75rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.dark-mode .card { background-color: #1f2937; color: #f9fafb; }
+.dark-mode .app-card h4, .dark-mode .card h3, .dark-mode .card p { color: #f9fafb; }
+</style>
+</head>
+<body class="bg-gray-50 text-gray-800 transition-colors duration-500">
+
+<!-- Navbar -->
+<header class="bg-white shadow-md fixed w-full z-50 top-0">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <h1 class="text-2xl font-bold text-indigo-600 cursor-pointer" id="home-link">Helofy Software Ltd</h1>
+    <nav class="flex flex-1 justify-evenly ml-6 space-x-4">
+      <a href="#all" class="nav-link flex-1 text-center px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full hover:bg-indigo-600 hover:text-white">All</a>
+      <a href="#contact" class="nav-link flex-1 text-center px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full hover:bg-indigo-600 hover:text-white">Contact</a>
+      <a href="#about" class="nav-link flex-1 text-center px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full hover:bg-indigo-600 hover:text-white">About</a>
+    </nav>
+    <button id="theme-toggle" class="ml-4 px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700">Dark Mode</button>
+  </div>
+</header>
+
+<main class="pt-28 mb-20 container mx-auto px-6">
+
+<!-- Home -->
+<section id="home" class="section">
+<h2 class="text-4xl font-extrabold text-center text-indigo-600 mb-6">Welcome to Helofy Software Ltd</h2>
+<p class="text-center text-lg mb-8">Explore our amazing apps across different categories!</p>
+
+<!-- Tabs -->
+<div class="flex justify-center gap-4 mb-8 flex-wrap">
+  <span class="tab px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full cursor-pointer tab-active" data-category="popular">Popular</span>
+  <span class="tab px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full cursor-pointer" data-category="games">Games</span>
+  <span class="tab px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full cursor-pointer" data-category="social">Social</span>
+  <span class="tab px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full cursor-pointer" data-category="apps">Apps</span>
+</div>
+
+<!-- Apps Grid -->
+<div class="grid gap-6 md:grid-cols-3" id="home-apps">
+  <!-- Popular -->
+  <div class="app-card card" data-category="popular">
+    <h4 class="text-xl font-semibold mb-2">Helofy Messenger</h4>
+    <img src="https://i.ibb.co/3h3vZ5L/messenger.png" class="rounded-lg mx-auto mb-3">
+    <div class="flex justify-center gap-2 mt-4">
+      <a href="#" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Download APK</a>
+      <a href="#" class="text-indigo-600 border border-indigo-600 px-4 py-2 rounded hover:bg-indigo-600 hover:text-white">Google Play</a>
+    </div>
+  </div>
+  <div class="app-card card" data-category="popular">
+    <h4 class="text-xl font-semibold mb-2">Helofy QR Scanner</h4>
+    <img src="https://i.ibb.co/F8sjKqk/qrscanner.png" class="rounded-lg mx-auto mb-3">
+  </div>
+
+  <!-- Games -->
+  <div class="app-card card" data-category="games">
+    <h4 class="text-xl font-semibold mb-2">Helofy Bubble Game</h4>
+    <img src="https://i.ibb.co/ZJxFfF7/bubblegame.png" class="rounded-lg mx-auto mb-3">
+  </div>
+
+  <!-- Social -->
+  <div class="app-card card" data-category="social">
+    <h4 class="text-xl font-semibold mb-2">Helofy Social</h4>
+    <img src="https://i.ibb.co/Lv6XvK3/socialapp.png" class="rounded-lg mx-auto mb-3">
+  </div>
+
+  <!-- Apps -->
+  <div class="app-card card" data-category="apps">
+    <h4 class="text-xl font-semibold mb-2">Helofy VPN</h4>
+    <img src="https://i.ibb.co/Z2bq6sK/vpn.png" class="rounded-lg mx-auto mb-3">
+  </div>
+</div>
+</section>
+
+<!-- About -->
+<section id="about-section" class="hidden-section section">
+<div class="card mx-auto max-w-3xl">
+<h3 class="text-2xl font-bold text-indigo-600 mb-4">About Us</h3>
+<p class="leading-relaxed">
+Helofy Software Ltd is a modern technology company focused on creating innovative digital solutions.
+From secure messaging apps to powerful VPN services, our goal is to make technology more accessible,
+secure, and enjoyable for everyone.
+</p>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact-section" class="hidden-section section">
+<div class="card mx-auto max-w-3xl">
+<h3 class="text-2xl font-bold text-indigo-600 mb-4">Contact Us</h3>
+<p class="mb-2">📧 Email: contact@helofy.com</p>
+<p class="mb-2">📞 Phone: +880 1602749501</p>
+<p>📍 Address: Gouripur, Cumilla, Bangladesh</p>
+</div>
+</section>
+
+<!-- All -->
+<section id="all-section" class="hidden-section section">
+<h3 class="text-2xl font-bold text-indigo-600 mb-6 text-center">All Apps</h3>
+<div class="grid gap-6 md:grid-cols-3">
+  <div class="app-card card"><h4>Helofy Messenger</h4></div>
+  <div class="app-card card"><h4>Helofy QR Scanner</h4></div>
+  <div class="app-card card"><h4>Helofy Bubble Game</h4></div>
+  <div class="app-card card"><h4>Helofy Social</h4></div>
+  <div class="app-card card"><h4>Helofy VPN</h4></div>
+</div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white text-center py-4 fixed bottom-0 w-full z-50">
+<p>&copy; 2025 Helofy Software Ltd. All rights reserved.</p>
+</footer>
+
+<script>
+// SPA navigation
+const sections = {
+  home: document.getElementById('home'),
+  about: document.getElementById('about-section'),
+  contact: document.getElementById('contact-section'),
+  all: document.getElementById('all-section')
+};
+
+function showSection(name){
+  for(const key in sections){
+    sections[key].style.display = (key===name || (name==='apps' && key==='home')) ? 'block' : 'none';
+  }
+  window.scrollTo(0,0);
+}
+
+document.getElementById('home-link').addEventListener('click', ()=>showSection('home'));
+document.querySelectorAll('.nav-link').forEach(link=>{
+  link.addEventListener('click', e=>{
+    e.preventDefault();
+    const target = link.textContent.toLowerCase();
+    showSection(target);
+  });
+});
+
+// Tabs filter
+const tabs = document.querySelectorAll('.tab');
+const appCards = document.querySelectorAll('#home-apps .app-card');
+
+tabs.forEach(tab=>{
+  tab.addEventListener('click', ()=>{
+    tabs.forEach(t=>t.classList.remove('tab-active'));
+    tab.classList.add('tab-active');
+    const category = tab.dataset.category;
+    appCards.forEach(card=>{
+      card.style.display = (category==='all' || card.dataset.category===category) ? 'block' : 'none';
+    });
+  });
+});
+appCards.forEach(card=>card.style.display='block');
+
+// Dark/Light Mode
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', ()=>{
+  document.body.classList.toggle('dark-mode');
+  document.body.classList.toggle('bg-gray-50');
+  document.body.classList.toggle('bg-gray-900');
+  document.body.classList.toggle('text-gray-800');
+  document.body.classList.toggle('text-white');
+  document.querySelector('header').classList.toggle('bg-white');
+  document.querySelector('header').classList.toggle('bg-gray-800');
+  document.querySelector('footer').classList.toggle('bg-gray-900');
+  document.querySelector('footer').classList.toggle('bg-gray-800');
+  themeToggle.textContent = themeToggle.textContent.includes('Dark') ? 'Light Mode' : 'Dark Mode';
+});
+</script>
+
+</body>
+</html>
